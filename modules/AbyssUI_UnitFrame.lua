@@ -222,7 +222,7 @@ AbyssUI_UnitFrame:SetScript("OnEvent", function(self, event, arg1)
       end
     end
 		-- VehicleHandle
-		if (GetWoWVersion ~= 11307) then
+		if (GetWoWVersion ~= 11400) then
 			local eventVehicleHandle = CreateFrame("Frame", "$parent_eventVehicleHandle", nil)
 			eventVehicleHandle:RegisterEvent("UNIT_EXITED_VEHICLE")
 			eventVehicleHandle:SetScript("OnEvent", function(self, event, ...)
@@ -384,7 +384,7 @@ AbyssUI_UnitFrame:SetScript("OnEvent", function(self, event, arg1)
 						v:ClearAllPoints()
 						PlayerName:SetPoint("CENTER", PlayerFrame, "CENTER", 40, 15)
 						TargetFrameTextureFrameName:SetPoint("CENTER", TargetFrame, "CENTER", -40, 15)
-						if (GetWoWVersion ~= 11307) then
+						if (GetWoWVersion ~= 11400) then
 							FocusFrameTextureFrameName:SetPoint("CENTER", FocusFrame, "CENTER", -40, 15)
 						end
 					end)
@@ -499,7 +499,7 @@ AbyssUI_UnitFrame:SetScript("OnEvent", function(self, event, arg1)
 		local function UnitFramesImproved_Style_TargetOfTargetFrame()
 			if not InCombatLockdown () then
 				TargetFrameToTHealthBar:SetStatusBarColor(UnitColor("targettarget"))
-				if (GetWoWVersion ~= 11307) then
+				if (GetWoWVersion ~= 11400) then
 					FocusFrameToTHealthBar:SetStatusBarColor(UnitColor("focustarget"))
 				end
 			end
@@ -544,11 +544,11 @@ AbyssUI_UnitFrame:SetScript("OnEvent", function(self, event, arg1)
 				UnitFramesImproved_BossTargetFrame_Style(Boss4TargetFrame)
 
 				UnitFramesImproved_Style_TargetFrame(TargetFrame)
-				if (GetWoWVersion ~= 11307) then
+				if (GetWoWVersion ~= 11400) then
 					UnitFramesImproved_Style_TargetFrame(FocusFrame)
 				end
 				UnitFramesImproved_UnitName_Color()
-				if (FocusFrame and GetWoWVersion ~= 11307) then
+				if (FocusFrame and GetWoWVersion ~= 11400) then
 					UnitFramesImproved_Style_TargetFrame(FocusFrame)
 				end
 				UnitFramesImproved_Style_TargetOfTargetFrame()
